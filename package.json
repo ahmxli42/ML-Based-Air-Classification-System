@@ -1,0 +1,9 @@
+{
+  "name": "ml-based-air-classification-system",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix Design run dev",
+    "build": "npm --prefix Design run build",
+    "install:all": "npm --prefix Design install"
+  }
+}

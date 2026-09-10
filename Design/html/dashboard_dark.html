@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.glass-edge{box-shadow:inset 0 1px 1px rgba(255,255,255,0.22),0 12px 32px rgba(0,20,40,0.18);}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#003825", "surface-container-highest": "#293642", "on-primary-fixed-variant": "#005045", "surface-dim": "#07151f", "on-tertiary-fixed-variant": "#004c69", "on-primary-fixed": "#00201b", "outline-variant": "#3c4a46", "primary": "#42dec3", "background": "#07151f", "on-tertiary-fixed": "#001e2c", "on-surface": "#d6e4f4", "on-secondary-fixed-variant": "#005137", "surface-container-high": "#1e2b37", "surface-container": "#13212c", "on-primary": "#00382f", "on-secondary-fixed": "#002114", "on-error": "#690005", "secondary": "#68dba9", "tertiary-fixed": "#c4e7ff", "on-error-container": "#ffdad6", "primary-container": "#00c2a8", "surface-tint": "#41ddc2", "tertiary": "#7fd1ff", "on-secondary-container": "#00311f", "on-background": "#d6e4f4", "inverse-surface": "#d6e4f4", "surface-container-lowest": "#030f1a", "error": "#ffb4ab", "outline": "#85948f", "on-surface-variant": "#bbcac4", "error-container": "#93000a", "secondary-fixed": "#85f8c4", "primary-fixed": "#65fade", "tertiary-fixed-dim": "#7bd0ff", "surface-bright": "#2d3b47", "surface": "#07151f", "surface-container-low": "#0f1d28", "on-tertiary": "#00354a", "tertiary-container": "#30b8f3", "primary-fixed-dim": "#41ddc2", "inverse-primary": "#006b5c", "surface-variant": "#293642", "secondary-fixed-dim": "#68dba9", "on-tertiary-container": "#004660", "on-primary-container": "#00493e", "secondary-container": "#25a475", "inverse-on-surface": "#24323e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "12px", "card-padding-default": "28px", "space-lg": "24px", "card-padding-spacious": "36px", "space-xl": "32px", "card-padding-compact": "20px", "grid-gutter": "32px", "space-2xl": "48px", "space-xxs": "4px", "space-3xl": "64px", "space-xs": "8px", "space-md": "16px" }, "fontFamily": { "headline-lg": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Inter" ], "display-xl": [ "Plus Jakarta Sans" ], "body-md": [ "Inter" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-numeric": [ "JetBrains Mono" ], "label-caps": [ "Plus Jakarta Sans" ], "body-lg": [ "Inter" ] }, "fontSize": { "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "display-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "display-xl": [ "48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" } ], "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "label-numeric": [ "14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "label-caps": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-on-primary"><div class="fixed inset-0 pointer-events-none z-0"><div class="absolute -top-32 -left-32 w-[640px] h-[640px] rounded-full bg-primary/10 blur-[130px]"></div><div class="absolute top-1/3 -right-24 w-[580px] h-[580px] rounded-full bg-tertiary/10 blur-[140px]"></div><div class="absolute -bottom-32 left-1/4 w-[720px] h-[720px] rounded-full bg-secondary-container/10 blur-[160px]"></div></div><aside class="fixed left-0 top-0 h-screen w-[260px] z-50 flex flex-col justify-between p-space-lg bg-surface-container-lowest/60 backdrop-blur-2xl glass-edge border-r border-white/10"><div class="flex flex-col gap-space-xl"><div class="flex items-center gap-space-sm px-space-xs pt-space-xs"><img alt="Air Quality System Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UCyaOQUYTeqcCcZ-pVq3JyivbRFcf-qzJ7SCGQHD3m7D4be8BjL94_0q-kztFVZr22S9mwKLRYbI1LEO4KFVXqxpqPnSQhcUKRLaD0swqXVhk4rC4zkxwwpzvvRvCnnOyjP3BJLrHSOTzZo8a-yKZS_x8ZRlGkVP1JpZMOLirxJkI3xPNsHw3K3Id90hGjdY02UjE14gxEAE_Imbr78Dkj2cjoFmBBRH89Pw94nryog34viBbo8TMdtvU"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold leading-none">AeroPure</span><span class="font-label-caps text-label-caps uppercase tracking-wider text-primary pt-space-xxs">Classification</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary/20 text-primary border border-primary/40 shadow-[0_0_20px_rgba(66,222,195,0.25)] font-semibold"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl transition-all duration-200 group bg-primary/20 text-primary border border-primary/40 shadow-[0_0_20px_rgba(66,222,195,0.25)] font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high/60 hover:text-on-surface transition-all duration-200 group" data-path="classify" href="#"><span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">auto_awesome</span><span class="font-body-md text-body-md">Classify</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high/60 hover:text-on-surface transition-all duration-200 group" data-path="history" href="#"><span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">history</span><span class="font-body-md text-body-md">History</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high/60 hover:text-on-surface transition-all duration-200 group" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">tune</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="p-space-md rounded-xl bg-surface-container/50 backdrop-blur-xl border border-white/10 glass-edge flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Telemetry Feed</span><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span></div><p class="font-label-numeric text-label-numeric text-on-surface">14/14 nodes active</p><span class="font-body-sm text-body-sm text-on-surface-variant/80">Sync latency 32ms</span></div></aside><div class="pl-[260px] relative z-10 min-h-screen flex flex-col"><header class="fixed top-0 left-[260px] right-0 h-20 bg-surface-container-lowest/50 backdrop-blur-2xl glass-edge border-b border-white/10 z-40 px-space-2xl flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Air Quality Classification System</span></div><div class="flex items-center gap-space-xl"><div class="hidden lg:flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container-low/70 border border-white/10 backdrop-blur-md"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-numeric text-label-numeric text-on-surface-variant">Tuesday, Oct 24 • 14:32 PST</span><span class="mx-space-xxs text-outline-variant">|</span><span class="font-label-caps text-label-caps uppercase text-secondary font-medium tracking-wide">Live Data Feed</span></div><div class="flex items-center gap-space-sm p-1.5 pr-space-md rounded-full bg-surface-container/60 hover:bg-surface-container-high/60 border border-white/10 backdrop-blur-xl transition-all cursor-pointer shadow-[0_4px_16px_rgba(0,10,20,0.25)]"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-white/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWNJATyhVAnzYahTeK_czEex4YCu0VH1U2m74OkdP_Jmr1nzf3sb_WjbExdAax99rWznVcWvj8m_7B-KHu7T6qcWt0PsX7PAAxVSo5mj-SzEf7IRQlJlxwjyoJ_vVXL-F6tLDUq6P3ZBlspPr_ZgrXbVYhgEAD48-uT_Ij0ZPnEBMf_QewKXbfM2cM8gsRxIWL2JmQYSZmKGenfcD5CE51K2oVabWz49D37uTJdSDondt2K3Wmu6uF"/><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Dr. Anya Sharma</span><span class="font-label-caps text-label-caps text-on-surface-variant leading-none">Lead Atmospheric Scientist</span></div><span class="material-symbols-outlined text-[18px] text-on-surface-variant ml-space-xs">expand_more</span></div></div></header><main class="w-full pt-20 px-space-2xl pb-space-3xl flex-1"><div class="flex flex-col w-full">
+<!-- Station Header & Utility Controls -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-2xl">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-primary mb-space-xxs">
+<span class="material-symbols-outlined text-[18px]">sensors</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Station Node ID: ISB-H8-409</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">
+        Station Overview — Islamabad Sector H-8 Station
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xxs">
+        Real-time telemetry and atmospheric particulate classification feed
+      </p>
+</div>
+<!-- Quick Action Bar -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-surface-container/60 hover:bg-surface-container-high text-on-surface transition-all duration-200 shadow-sm text-body-sm font-medium backdrop-blur-md">
+<span class="material-symbols-outlined text-[18px] text-tertiary">file_download</span>
+<span>Export Telemetry (CSV)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-surface-container/60 hover:bg-surface-container-high text-on-surface transition-all duration-200 shadow-sm text-body-sm font-medium backdrop-blur-md">
+<span class="material-symbols-outlined text-[18px] text-primary">tune</span>
+<span>Calibrate Sensors</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-primary/15 hover:bg-primary/25 text-primary transition-all duration-200 shadow-sm text-body-sm font-medium backdrop-blur-md" id="refreshBtn" onclick="triggerTelemetryRefresh()">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-700" id="refreshIcon">sync</span>
+<span id="refreshLabel">Refresh Live Data (Just now)</span>
+</button>
+</div>
+</div>
+<!-- Primary Atmospheric Hero Glass Card -->
+<div class="relative w-full rounded-2xl bg-surface-container/40 backdrop-blur-2xl p-[36px] shadow-xl overflow-hidden mb-space-2xl">
+<!-- Localized Atmospheric Aura Glow -->
+<div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-error-container/20 blur-[100px] pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-primary/10 blur-[110px] pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-xl">
+<!-- Location & Metadata Top Tier -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high/80 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[28px]">location_on</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Islamabad, Pakistan</span>
+<span class="font-label-caps text-label-caps uppercase px-2.5 py-0.5 rounded-full bg-surface-bright/70 text-on-surface-variant font-medium">Urban Basin</span>
+</div>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant/80 tracking-normal mt-0.5">
+              Lat 33.6844° N, Lon 73.0479° E • Elevation 540m
+            </span>
+</div>
+</div>
+<!-- Meteorological Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm bg-surface-container-lowest/60 p-space-xs rounded-xl backdrop-blur-md">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5">
+<span class="material-symbols-outlined text-tertiary text-[20px]">thermostat</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Temp</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-semibold">24°C</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">humidity_percentage</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Humidity</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-semibold">48%</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">air</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Wind</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-semibold">6.2 km/h NE</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">speed</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Barometer</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-semibold">1014 hPa</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero AQI Scalar Display & Diagnostic Summary -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-xl py-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-baseline gap-space-lg">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-numeric text-[68px] sm:text-[84px] leading-none font-bold text-on-surface tracking-tight drop-shadow-[0_10px_24px_rgba(0,10,20,0.5)]">
+              168
+            </span>
+<div class="flex flex-col ml-space-xxs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider font-semibold">AQI Index</span>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant/70">US EPA Standard</span>
+</div>
+</div>
+<!-- Unhealthy Classification Badge Pill -->
+<div class="flex items-center gap-2.5 px-4 py-2 rounded-full bg-error-container/40 text-error backdrop-blur-md shadow-[0_0_24px_rgba(147,0,10,0.35)]">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-error"></span>
+</span>
+<span class="font-label-caps text-[12px] uppercase font-bold tracking-wider">Unhealthy</span>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant/80">Band 151-200</span>
+</div>
+</div>
+<!-- Descriptive Clinical Assessment -->
+<div class="max-w-xl p-space-md rounded-xl bg-surface-container-lowest/50 backdrop-blur-lg">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[22px] shrink-0 mt-0.5">warning</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Current particulate concentration exceeds WHO guideline threshold by <strong class="text-error font-semibold">4.2x</strong>. Sensitive groups should avoid prolonged outdoor exertion; general population should curtail heavy cardiovascular activity outdoors.
+            </p>
+</div>
+</div>
+</div>
+<!-- 6 Key Atmospheric Pollutant Stat Chips -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-md pt-space-xs">
+<!-- PM2.5 (Unhealthy) -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md transition-all duration-200 hover:bg-surface-container-high/70 shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">PM2.5</span>
+<span class="w-2 h-2 rounded-full bg-error shadow-[0_0_8px_rgba(255,180,171,0.6)]"></span>
+</div>
+<span class="font-label-numeric text-headline-sm font-semibold text-on-surface">88.4</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">µg/m³</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant/80">
+<span class="font-label-caps text-[10px] uppercase text-error">Unhealthy</span>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">Lim 35.4</span>
+</div>
+</div>
+<!-- PM10 (Moderate) -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md transition-all duration-200 hover:bg-surface-container-high/70 shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">PM10</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container shadow-[0_0_8px_rgba(37,164,117,0.6)]"></span>
+</div>
+<span class="font-label-numeric text-headline-sm font-semibold text-on-surface">142.1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">µg/m³</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant/80">
+<span class="font-label-caps text-[10px] uppercase text-secondary">Moderate</span>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">Lim 154</span>
+</div>
+</div>
+<!-- SO2 (Good) -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md transition-all duration-200 hover:bg-surface-container-high/70 shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">SO₂</span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(66,222,195,0.6)]"></span>
+</div>
+<span class="font-label-numeric text-headline-sm font-semibold text-on-surface">14.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">ppb</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant/80">
+<span class="font-label-caps text-[10px] uppercase text-primary">Good</span>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">Lim 75</span>
+</div>
+</div>
+<!-- NO2 (Moderate) -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md transition-all duration-200 hover:bg-surface-container-high/70 shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">NO₂</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container shadow-[0_0_8px_rgba(37,164,117,0.6)]"></span>
+</div>
+<span class="font-label-numeric text-headline-sm font-semibold text-on-surface">38.2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">ppb</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant/80">
+<span class="font-label-caps text-[10px] uppercase text-secondary">Moderate</span>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">Lim 53</span>
+</div>
+</div>
+<!-- CO (Good) -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md transition-all duration-200 hover:bg-surface-container-high/70 shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">CO</span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(66,222,195,0.6)]"></span>
+</div>
+<span class="font-label-numeric text-headline-sm font-semibold text-on-surface">1.2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">ppm</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant/80">
+<span class="font-label-caps text-[10px] uppercase text-primary">Good</span>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">Lim 9.0</span>
+</div>
+</div>
+<!-- O3 (Good) -->
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md transition-all duration-200 hover:bg-surface-container-high/70 shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">O₃</span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(66,222,195,0.6)]"></span>
+</div>
+<span class="font-label-numeric text-headline-sm font-semibold text-on-surface">42.0</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">ppb</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant/80">
+<span class="font-label-caps text-[10px] uppercase text-primary">Good</span>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">Lim 70</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Analytical Grid (Row of 3 Bespoke Cards) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-grid-gutter w-full">
+<!-- Card 1: Today's Trend -->
+<div class="flex flex-col justify-between p-[28px] rounded-2xl bg-surface-container/40 backdrop-blur-xl shadow-lg relative overflow-hidden group hover:bg-surface-container/50 transition-all duration-300">
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">show_chart</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Today's Trend</span>
+</div>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant bg-surface-container-lowest/60 px-2 py-0.5 rounded">24h History</span>
+</div>
+<div class="flex items-baseline justify-between mb-space-xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-numeric text-display-lg text-on-surface font-semibold">182</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Daily Peak</span>
+</div>
+<span class="font-label-numeric text-label-numeric text-error font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+            +14% vs yesterday
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 mb-space-md">
+          Trajectory climbed into unhealthy tier around midday due to low thermal wind dispersal.
+        </p>
+<!-- Inline SVG Area Sparkline Chart -->
+<div class="w-full h-36 relative mt-space-xs">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 320 120">
+<defs>
+<lineargradient id="aqiTrendGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#42dec3" stop-opacity="0.35"></stop>
+<stop offset="70%" stop-color="#42dec3" stop-opacity="0.05"></stop>
+<stop offset="100%" stop-color="#42dec3" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Guide threshold lines -->
+<line opacity="0.6" stroke="#3c4a46" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="320" y1="35" y2="35"></line>
+<line opacity="0.4" stroke="#3c4a46" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="320" y1="75" y2="75"></line>
+<text fill="#85948f" font-family="JetBrains Mono" font-size="9" x="4" y="31">150 AQI (Unhealthy)</text>
+<text fill="#85948f" font-family="JetBrains Mono" font-size="9" x="4" y="71">100 AQI (Moderate)</text>
+<!-- Gradient Area -->
+<path d="M 0,95 Q 45,90 90,82 T 180,48 T 240,24 T 280,38 L 320,44 L 320,120 L 0,120 Z" fill="url(#aqiTrendGrad)"></path>
+<!-- Dynamic Curve -->
+<path d="M 0,95 Q 45,90 90,82 T 180,48 T 240,24 T 280,38 L 320,44" fill="none" stroke="#42dec3" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Peak Marker -->
+<circle class="animate-pulse" cx="240" cy="24" fill="#42dec3" r="4.5"></circle>
+<circle cx="240" cy="24" fill="none" opacity="0.5" r="8" stroke="#42dec3" stroke-width="1.5"></circle>
+<!-- Current Marker -->
+<circle cx="320" cy="44" fill="#68dba9" r="4"></circle>
+</svg>
+</div>
+<div class="flex justify-between font-label-numeric text-[11px] text-on-surface-variant/60 mt-space-xs pt-space-xxs">
+<span>00:00</span>
+<span>06:00</span>
+<span>12:00</span>
+<span>18:00</span>
+<span class="text-primary font-medium">Now (14:32)</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Quick Classify Shortcut -->
+<div class="flex flex-col justify-between p-[28px] rounded-2xl bg-surface-container/40 backdrop-blur-xl shadow-lg relative overflow-hidden group hover:bg-surface-container/50 transition-all duration-300">
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">batch_prediction</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Quick Classify</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+          Input raw sensor telemetry or upload micro-sensor batch readings for instant atmospheric classification.
+        </p>
+<!-- Interactive Archetype Presets -->
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<button class="w-full flex items-center justify-between px-space-md py-2.5 rounded-xl bg-surface-container-lowest/60 hover:bg-surface-container-high/80 text-left transition-all duration-150 group/btn" onclick="selectPreset('Urban Smog', 178, '88.4 µg/m³')">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-error">cloud</span>
+<span class="font-body-sm text-body-sm text-on-surface">Urban Smog Preset</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover/btn:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-2.5 rounded-xl bg-surface-container-lowest/60 hover:bg-surface-container-high/80 text-left transition-all duration-150 group/btn" onclick="selectPreset('Industrial Baseline', 132, '54.2 µg/m³')">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">factory</span>
+<span class="font-body-sm text-body-sm text-on-surface">Industrial Baseline</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover/btn:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-2.5 rounded-xl bg-surface-container-lowest/60 hover:bg-surface-container-high/80 text-left transition-all duration-150 group/btn" onclick="selectPreset('Clean Foothills', 38, '9.8 µg/m³')">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">nature</span>
+<span class="font-body-sm text-body-sm text-on-surface">Clean Atmosphere Reference</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover/btn:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<a class="w-full flex items-center justify-center gap-space-sm h-11 px-space-md rounded-xl bg-primary hover:bg-primary-container text-on-primary font-medium shadow-md hover:shadow-lg transition-all duration-200" data-path="classify" href="#">
+<span class="font-body-md text-body-md font-semibold">Launch Classifier</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3: Recent Activity -->
+<div class="flex flex-col justify-between p-[28px] rounded-2xl bg-surface-container/40 backdrop-blur-xl shadow-lg relative overflow-hidden group hover:bg-surface-container/50 transition-all duration-300">
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[22px]">history</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Recent Activity</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Telemetry Ingest</span>
+</div>
+<!-- Sample Records Stack -->
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/60 hover:bg-surface-container-high/60 transition-all flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric text-[13px] font-semibold text-on-surface">#AQ-9421</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">• Rawalpindi North</span>
+</div>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">12m ago</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-error-container/40 text-error">
+                Unhealthy
+              </span>
+<span class="font-label-numeric text-[12px] text-on-surface-variant">98.4% Confidence</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/60 hover:bg-surface-container-high/60 transition-all flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric text-[13px] font-semibold text-on-surface">#AQ-9420</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">• Margalla Foothills</span>
+</div>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">1h ago</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-secondary-container/40 text-secondary">
+                Moderate
+              </span>
+<span class="font-label-numeric text-[12px] text-on-surface-variant">94.1% Confidence</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/60 hover:bg-surface-container-high/60 transition-all flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric text-[13px] font-semibold text-on-surface">#AQ-9419</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">• D-12 Background</span>
+</div>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">3h ago</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-primary/20 text-primary">
+                Good
+              </span>
+<span class="font-label-numeric text-[12px] text-on-surface-variant">99.2% Confidence</span>
+</div>
+</div>
+</div>
+</div>
+<!-- History Navigation Link -->
+<div class="pt-space-md">
+<a class="inline-flex items-center gap-space-xs font-body-sm text-body-sm text-primary hover:text-primary-fixed transition-colors font-medium" data-path="history" href="#">
+<span>View all 148 entries in History</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Micro-Interactions Script -->
+<script>
+    function triggerTelemetryRefresh() {
+      const icon = document.getElementById('refreshIcon');
+      const label = document.getElementById('refreshLabel');
+      if (!icon || !label) return;
+      
+      icon.classList.add('rotate-180');
+      label.textContent = 'Synchronizing...';
+      
+      setTimeout(() => {
+        icon.classList.remove('rotate-180');
+        label.textContent = 'Live Feed Synced (0s ago)';
+      }, 700);
+    }
+
+    function selectPreset(name, aqiVal, pm25Val) {
+      const feedback = document.createElement('div');
+      feedback.className = 'fixed bottom-8 right-8 z-50 px-space-md py-space-sm rounded-xl bg-surface-container-highest text-on-surface shadow-xl flex items-center gap-space-sm border border-primary/30 backdrop-blur-xl animate-fade-in';
+      feedback.innerHTML = `
+        <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+        <span class="font-body-sm text-body-sm">Loaded preset: <strong>${name}</strong> (Target ${aqiVal} AQI)</span>
+      `;
+      document.body.appendChild(feedback);
+      setTimeout(() => feedback.remove(), 2600);
+    }
+  </script>
+</div></main></div></body></html>
