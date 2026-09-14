@@ -8,7 +8,15 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from 'recharts';
+import { TrendPoint } from '../../services/weatherApi';
 import { useTheme } from '../../context/ThemeContext';
+
+interface TodayTrendChartProps {
+  data?: TrendPoint[];
+  peakAqi?: number;
+  currentAqi?: number;
+  isRealLive?: boolean;
+}
 
 const TREND_DATA = [
   { time: '00:00', aqi: 75, label: '00:00' },
@@ -25,8 +33,17 @@ const TREND_DATA = [
   { time: '23:59', aqi: 98, label: '24:00' },
 ];
 
-export const TodayTrendChart: React.FC = () => {
+export const TodayTrendChart: React.FC<TodayTrendChartProps> = ({
+  data,
+  peakAqi,
+  currentAqi,
+  isRealLive = false,
+}) => {
   const { isDark } = useTheme();
+
+  const chartData = data && data.length > 0 ? data : TREND_DATA;
+  const peakValue = peakAqi || Math.max(...chartData.map((d) => d.aqi), 182);
+  const nowValue = currentAqi || chartData[chartData.length - 1]?.aqi || 154;
 
   return (
     <div className="flex flex-col justify-between p-6 sm:p-[28px] rounded-2xl bg-surface-container/60 dark:bg-surface-container/40 backdrop-blur-xl shadow-lg relative overflow-hidden glass-edge border border-white/20 dark:border-white/10 group hover:bg-surface-container/50 transition-all duration-300">
@@ -39,8 +56,9 @@ export const TodayTrendChart: React.FC = () => {
               Today's Trend
             </span>
           </div>
-          <span className="font-label-numeric text-[11px] text-on-surface-variant bg-surface-container-lowest/60 px-2.5 py-1 rounded-md border border-white/10">
-            24h Telemetry
+          <span className="font-label-numeric text-[11px] text-on-surface-variant bg-surface-container-lowest/60 px-2.5 py-1 rounded-md border border-white/10 flex items-center gap-1">
+            {isRealLive && <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>}
+            {isRealLive ? 'Live 24h Feed' : '24h Benchmark'}
           </span>
         </div>
 
@@ -48,7 +66,7 @@ export const TodayTrendChart: React.FC = () => {
         <div className="flex items-baseline justify-between mb-space-xs">
           <div className="flex items-baseline gap-space-xs">
             <span className="font-label-numeric text-display-lg text-on-surface font-semibold">
-              182
+              {peakValue}
             </span>
             <span className="font-label-caps uppercase text-on-surface-variant text-[11px]">
               Daily Peak
@@ -61,7 +79,9 @@ export const TodayTrendChart: React.FC = () => {
         </div>
 
         <p className="font-body-sm text-[13px] text-on-surface-variant/80 mb-space-md leading-relaxed">
-          Trajectory climbed into unhealthy tier around midday due to low thermal wind dispersal and ground inversion.
+          {isRealLive
+            ? `Real-time atmospheric curve recorded across Islamabad telemetry grid, peaking at AQI ${peakValue}.`
+            : 'Trajectory climbed into unhealthy tier around midday due to low thermal wind dispersal and ground inversion.'}
         </p>
 
         {/* Recharts Area Chart */}
@@ -139,7 +159,7 @@ export const TodayTrendChart: React.FC = () => {
           <span className="text-error flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-error"></span> 150 Unhealthy
           </span>
-          <span className="text-primary font-semibold">Now (168)</span>
+          <span className="text-primary font-semibold">Now ({nowValue})</span>
         </div>
       </div>
     </div>

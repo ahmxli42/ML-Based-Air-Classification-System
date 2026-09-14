@@ -127,7 +127,12 @@ export const DashboardPage: React.FC = () => {
 
       {/* Secondary Analytical Grid (Row of 3 Bespoke Cards) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-grid-gutter w-full">
-        <TodayTrendChart />
+        <TodayTrendChart
+          data={telemetry.trend}
+          peakAqi={telemetry.peakAqi}
+          currentAqi={telemetry.aqi}
+          isRealLive={telemetry.isRealLiveFeed}
+        />
         <QuickClassifyCard />
         <RecentActivityCard />
       </div>

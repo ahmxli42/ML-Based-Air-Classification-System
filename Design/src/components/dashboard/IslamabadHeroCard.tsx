@@ -32,6 +32,12 @@ export const IslamabadHeroCard: React.FC<IslamabadHeroCardProps> = ({
                 <span className="font-label-caps text-[10px] uppercase px-2.5 py-0.5 rounded-full bg-surface-bright/70 text-on-surface-variant font-medium">
                   {data.urbanType}
                 </span>
+                {data.isRealLiveFeed && (
+                  <span className="inline-flex items-center gap-1 font-label-caps text-[10px] uppercase px-2 py-0.5 rounded-full bg-secondary/20 text-secondary font-semibold border border-secondary/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                    {data.feedSource}
+                  </span>
+                )}
               </div>
               <span className="font-label-numeric text-[13px] text-on-surface-variant tracking-normal mt-0.5">
                 Lat {data.coordinates.lat}° N, Lon {data.coordinates.lon}° E • Elevation {data.coordinates.elevation}m

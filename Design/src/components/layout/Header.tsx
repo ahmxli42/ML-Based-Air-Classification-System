@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 
 export const Header: React.FC = () => {
   const { isDark, toggleTheme } = useTheme();
+  const [timeStr, setTimeStr] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const day = now.toLocaleDateString('en-US', { weekday: 'long' });
+      const monthDay = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+      setTimeStr(`${day}, ${monthDay} • ${time}`);
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <header className="fixed top-0 left-[72px] right-0 h-16 sm:h-20 bg-surface-container-lowest/70 dark:bg-surface-container-lowest/50 backdrop-blur-2xl glass-edge border-b border-white/20 dark:border-white/10 z-40 px-space-md sm:px-space-2xl flex items-center justify-between transition-all">
@@ -27,7 +41,7 @@ export const Header: React.FC = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
           </span>
           <span className="font-label-numeric text-[13px] text-on-surface-variant">
-            Tuesday, Oct 24 • 14:32 PST
+            {timeStr || 'Connecting live clock...'}
           </span>
           <span className="mx-1 text-outline-variant">|</span>
           <span className="font-label-caps text-[10px] uppercase text-secondary font-semibold tracking-wide">
