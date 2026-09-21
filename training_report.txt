@@ -1,0 +1,114 @@
+===========================================================================
+>> BASELINE AIR QUALITY CLASSIFIER - TRAINING PIPELINE
+===========================================================================
+
+[Step 1/7] Loading cleaned dataset from:
+   --> datasets\station_day_cleaned.csv
+   [OK] Dataset successfully loaded: 87,025 records.
+
+Initial Class Distribution of AQI Categories (Target: AQI_Bucket):
+   - Moderate       :  29,417 samples (33.80%)
+   - Satisfactory   :  23,636 samples (27.16%)
+   - Very Poor      :  11,762 samples (13.52%)
+   - Poor           :  11,493 samples (13.21%)
+   - Good           :   5,510 samples ( 6.33%)
+   - Severe         :   5,207 samples ( 5.98%)
+
+[Step 2/7] Feature Selection:
+   [OK] Selected Input Features (X) [6]: PM2.5, PM10, SO2, NO2, CO, O3
+        (Matches Punjab's official 6-pollutant AQI formula)
+   [i]  Deliberately Excluded Features [6]: NO, NOx, NH3, Benzene, Toluene, Xylene
+        (Preserved in dataset but reserved for separate adaptability experiments)
+   --> Target Label (y): 'AQI_Bucket'
+
+[Step 3/7] Splitting Dataset into Train (80%) and Test (20%):
+   [OK] Training Samples : 69,620 (80.0%)
+   [OK] Test Samples     : 17,405 (20.0%)
+   [OK] Stratified Split : Preserved exact class proportions in both splits.
+   [OK] Random Seed      : 42 (ensures full reproducibility)
+
+[Step 4/7] Training Random Forest Classifier:
+   - Number of Trees (n_estimators) : 200
+   - Class Weighting (class_weight) : 'balanced'
+     (Compensates for class imbalance so rare classes like 'Severe' are not ignored)
+   - Fitting 200 decision trees on training data...
+   [OK] Model training completed in 2.99 seconds.
+
+[Step 5/7] Evaluating Model Performance on Held-Out Test Set:
+   [OK] Overall Test Accuracy: 77.31%
+
+Detailed Per-Class Classification Report:
+   AQI Category     Precision (%)   Recall (%)   F1-Score (%)    Support
+   -------------------------------------------------------------------
+   Good                    66.67%       80.40%         72.89%      1,102
+   Satisfactory            78.99%       80.01%         79.50%      4,727
+   Moderate                83.47%       76.24%         79.69%      5,883
+   Poor                    63.53%       70.38%         66.78%      2,299
+   Very Poor               78.39%       77.89%         78.14%      2,352
+   Severe                  82.74%       81.86%         82.30%      1,042
+   -------------------------------------------------------------------
+   Macro Average           75.63%       77.80%         76.55%     17,405
+   Weighted Avg            77.83%       77.31%         77.45%     17,405
+
+Confusion Matrix (Rows = Actual True Category, Columns = Model Prediction):
+   Actual \ Pred       Good  Satisfa  Moderat     Poor  Very Po   Severe
+   ---------------------------------------------------------------------
+   Good                 886      209        5        0        0        2
+   Satisfactory         415    3,782      521        5        4        0
+   Moderate              26      765    4,485      569       31        7
+   Poor                   1       28      339    1,618      302       11
+   Very Poor              0        1       21      340    1,832      158
+   Severe                 1        3        2       15      168      853
+
+[Step 6/7] Saving Trained Artifacts:
+   [OK] Trained model saved to       : aqi_model.joblib (436.36 MB)
+   [OK] Feature names saved to       : feature_names.joblib
+   [OK] Saved input feature ordering : ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+
+===========================================================================
+>> [Step 7/7] FINAL RESULTS SUMMARY REPORT (READY FOR DOCUMENTATION)
+===========================================================================
+
+PROJECT SUMMARY & SPECIFICATIONS:
+---------------------------------
+* Dataset Used:
+  - Source file: datasets/station_day_cleaned.csv
+  - Total records analyzed: 87,025
+  - Total features in cleaned dataset: 18
+
+* Input Feature Selection (Baseline Model):
+  - Model Inputs (6): PM2.5, PM10, SO2, NO2, CO, O3
+  - Selection Rationale: Matches Punjab's official 6-parameter AQI formula.
+  - Deliberately Excluded (6): NO, NOx, NH3, Benzene, Toluene, Xylene
+  - Exclusion Rationale: Retained in dataset for subsequent cross-sensor adaptability experiments.
+
+* Dataset Partitioning:
+  - Train Set Size: 69,620 samples (80.0%)
+  - Test Set Size:  17,405 samples (20.0%)
+  - Split Methodology: Stratified split (random_state=42) preserving class proportions.
+
+* Algorithm Configuration:
+  - Classifier: RandomForestClassifier
+  - Number of Estimators: 200 trees
+  - Class Weighting: 'balanced' (counteracts majority-class bias toward 'Moderate' and 'Satisfactory')
+
+* Baseline Model Performance on Test Set:
+  - Overall Accuracy: 77.31%
+  - Macro F1-Score:   76.55%
+  - Weighted F1-Score:77.45%
+
+* Per-Category Performance Breakdown:
+
+  * Good          : Precision = 66.67% | Recall = 80.40% | F1 = 72.89% (Support: 1,102)
+  * Satisfactory  : Precision = 78.99% | Recall = 80.01% | F1 = 79.50% (Support: 4,727)
+  * Moderate      : Precision = 83.47% | Recall = 76.24% | F1 = 79.69% (Support: 5,883)
+  * Poor          : Precision = 63.53% | Recall = 70.38% | F1 = 66.78% (Support: 2,299)
+  * Very Poor     : Precision = 78.39% | Recall = 77.89% | F1 = 78.14% (Support: 2,352)
+  * Severe        : Precision = 82.74% | Recall = 81.86% | F1 = 82.30% (Support: 1,042)
+
+* Exported Artifacts:
+  - aqi_model.joblib (trained Random Forest model)
+  - feature_names.joblib (ordered input features)
+===========================================================================
+[OK] Model training and evaluation completed successfully!
+
