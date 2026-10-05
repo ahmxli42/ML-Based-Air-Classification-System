@@ -1,0 +1,126 @@
+==============================================================================
+>> UPGRADED AIR QUALITY CLASSIFIER (V2) - COMPREHENSIVE TRAINING REPORT
+==============================================================================
+
+[Step 1/8] Loading Engineered Dataset from:
+   --> datasets\station_day_v2.csv
+   [OK] Dataset successfully loaded: 87,025 records, 29 columns.
+
+Class Distribution of Target (AQI_Bucket):
+   - Good           :   5,510 samples ( 6.33%)
+   - Satisfactory   :  23,636 samples (27.16%)
+   - Moderate       :  29,417 samples (33.80%)
+   - Poor           :  11,493 samples (13.21%)
+   - Very Poor      :  11,762 samples (13.52%)
+   - Severe         :   5,207 samples ( 5.98%)
+
+[Step 2/8] Input Feature Selection & Dimensionality Comparison:
+   Baseline Input Features (6):
+     * PM2.5, PM10, SO2, NO2, CO, O3
+   Upgraded Input Features (16):
+     * Mandatory Pollutants [6] : PM2.5, PM10, SO2, NO2, CO, O3
+     * 1-Day Lag Features   [7] : PM2.5_lag1, PM10_lag1, SO2_lag1, NO2_lag1, CO_lag1, O3_lag1, AQI_lag1
+     * Temporal & Seasonal  [2] : Month, Season_Code (Monsoon/Summer, Spring, Winter, Smog Season)
+     * Chemical Ratio       [1] : PM25_PM10_ratio (Fine-to-coarse particulate fraction)
+   Target Label (y): 'AQI_Bucket'
+
+[Step 3/8] Dataset Partitioning:
+   [OK] Training Samples : 69,620 (80.0%)
+   [OK] Test Samples     : 17,405 (20.0%)
+   [OK] Stratified Split : Preserved exact class proportions across all 6 tiers.
+   [OK] Random Seed      : 42 (full reproducibility guaranteed)
+
+[Step 4/8] Model Architecture & Hyperparameters:
+   - Classifier Algorithm           : RandomForestClassifier
+   - Total Ensemble Trees (n_est)   : 200
+   - Class Weighting (class_weight) : 'balanced'
+   - Baseline Model Fit Time        : 2.94 seconds
+   - Upgraded Model Fit Time        : 4.85 seconds
+
+[Step 5/8] Side-by-Side Model Performance Benchmark:
+==============================================================================
+Performance Metric           Baseline (6 Pollutants)  Upgraded (16 Features)    
+------------------------------------------------------------------------------
+Overall Test Accuracy                       77.31%                   85.33%  (+8.01%)
+Macro Average F1-Score                      76.55%                   84.96%  (+8.41%)
+Weighted Average F1-Score                   77.45%                   85.39%  (+7.94%)
+Total Input Features                             6                       16
+==============================================================================
+
+[Step 6/8] Detailed Per-Class Classification Report (Upgraded Model):
+------------------------------------------------------------------------------
+AQI Category    Precision (%)   Recall (%)      F1-Score (%)    Test Support
+------------------------------------------------------------------------------
+Good                   74.90%        85.57%        79.88%        1,102
+Satisfactory           85.75%        85.32%        85.54%        4,727
+Moderate               88.85%        84.41%        86.58%        5,883
+Poor                   76.88%        83.30%        79.96%        2,299
+Very Poor              89.10%        87.24%        88.16%        2,352
+Severe                 88.87%        90.40%        89.63%        1,042
+------------------------------------------------------------------------------
+Macro Average          84.06%        86.04%        84.96%       17,405
+Weighted Avg           85.58%        85.33%        85.39%       17,405
+------------------------------------------------------------------------------
+
+Per-Class F1-Score Gain vs. Baseline:
+-----------------------------------------------------------------
+AQI Category     Baseline F1     Upgraded F1     Absolute Gain  
+-----------------------------------------------------------------
+Good                    72.89%        79.88%         +6.99%
+Satisfactory            79.50%        85.54%         +6.04%
+Moderate                79.69%        86.58%         +6.89%
+Poor                    66.78%        79.96%        +13.18%
+Very Poor               78.14%        88.16%        +10.02%
+Severe                  82.30%        89.63%         +7.33%
+-----------------------------------------------------------------
+
+[Step 7/8] Upgraded Model Confusion Matrix:
+Rows = Actual True Category, Columns = Model Prediction
+------------------------------------------------------------------------
+Actual \ Pred       Good  Satisfa  Moderat     Poor  Very Po   Severe
+------------------------------------------------------------------------
+Good                 943      155        3        1        0        0
+Satisfactory         302    4,033      383        9        0        0
+Moderate              14      510    4,966      375       17        1
+Poor                   0        5      230    1,915      144        5
+Very Poor              0        0        5      183    2,052      112
+Severe                 0        0        2        8       90      942
+------------------------------------------------------------------------
+
+[Step 8/8] Feature Importance Ranking (Gini Impurity Metric):
+-----------------------------------------------------------------
+Rank   Feature Name           Importance       Contribution
+-----------------------------------------------------------------
+1      AQI_lag1                    20.07%     (Cumulative:  20.1%)
+2      PM2.5                       18.90%     (Cumulative:  39.0%)
+3      PM2.5_lag1                  12.87%     (Cumulative:  51.8%)
+4      PM10                        10.97%     (Cumulative:  62.8%)
+5      PM10_lag1                    7.59%     (Cumulative:  70.4%)
+6      CO                           5.50%     (Cumulative:  75.9%)
+7      PM25_PM10_ratio              4.79%     (Cumulative:  80.7%)
+8      CO_lag1                      3.86%     (Cumulative:  84.5%)
+9      O3                           3.38%     (Cumulative:  87.9%)
+10     NO2                          2.24%     (Cumulative:  90.2%)
+11     O3_lag1                      2.22%     (Cumulative:  92.4%)
+12     NO2_lag1                     2.19%     (Cumulative:  94.6%)
+13     SO2                          1.88%     (Cumulative:  96.4%)
+14     SO2_lag1                     1.84%     (Cumulative:  98.3%)
+15     Month                        0.99%     (Cumulative:  99.3%)
+16     Season_Code                  0.73%     (Cumulative: 100.0%)
+-----------------------------------------------------------------
+
+==============================================================================
+>> KEY ARCHITECTURAL & METHODOLOGICAL FINDINGS
+==============================================================================
+1. Temporal Autocorrelation:
+   - AQI_lag1 and particulate lags (PM2.5_lag1, PM10_lag1) provide dominant
+     predictive leverage, capturing atmospheric persistence and inertia.
+2. Mitigation of Underrepresented Severe & Extreme Episodes:
+   - 'Poor' F1-score jumped from 66.78% to 79.96% (+13.18%)
+   - 'Very Poor' F1-score jumped from 78.14% to 88.16% (+10.02%)
+   - 'Severe' F1-score jumped from 82.30% to 89.63% (+7.33%)
+3. Climatology & Ratio Enrichment:
+   - The fine-to-coarse PM25_PM10_ratio and seasonal indicators provide distinct
+     fingerprints differentiating agricultural smog events from standard winter inversion.
+==============================================================================
+[OK] Report generation completed successfully!
